@@ -16,7 +16,6 @@
       text-align: center;
       margin: 10px auto;
     }
-    .ava-form-wide h1 { font-size: 30px; font-weight: 500; margin-bottom: 20px; color: #333; }
     .ava-row { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 15px; }
     .ava-col { flex: 1 1 45%; min-width: 240px; }
     .ava-full { flex: 1 1 100%; }
@@ -32,7 +31,6 @@
     .ava-hidden { position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none; }
     @media (max-width:600px){
       .ava-col,.ava-full{ flex:1 1 100% }
-      .ava-form-wide h1{ font-size:24px }
       .g-recaptcha{ transform:scale(0.88); transform-origin:0 0 }
     }
   </style>
@@ -40,16 +38,19 @@
 <body>
 <div style="display:flex; justify-content:center; padding:10px;">
   <div class="ava-form-wide">
-    <h1>-Get A Free Quote-</h1>
 
     <!-- Button-gated submit -->
     <form id="WebToLeadForm" action="https://stsrecycling.sugarondemand.com/index.php?entryPoint=WebToLeadCapture" method="POST">
+      <input type="hidden" id="last_name" name="last_name" value="*" />
       <div class="ava-row">
-        <div class="ava-col">
-          <input type="text" id="first_name" name="first_name" placeholder="First Name*" required />
+        <div class="ava-full">
+          <input type="text" id="first_name" name="first_name" placeholder="Full Name*" required />
         </div>
-        <div class="ava-col">
-          <input type="text" id="last_name" name="last_name" placeholder="Last Name*" required />
+      </div>
+
+      <div class="ava-row">
+        <div class="ava-full">
+          <input type="email" id="email" name="email" placeholder="Email Address*" required />
         </div>
       </div>
 
@@ -59,12 +60,6 @@
         </div>
         <div class="ava-col">
           <input type="text" id="account_name" name="account_name" placeholder="Company Name*" required />
-        </div>
-      </div>
-
-      <div class="ava-row">
-        <div class="ava-full">
-          <input type="email" id="email" name="email" placeholder="Email Address*" required />
         </div>
       </div>
 
@@ -103,14 +98,14 @@
       <input type="hidden" name="team_set_id" value="1" />
       <input type="hidden" name="req_id" value="last_name;" />
 
-      <!-- reCAPTCHA and Submit Button Row -->
-      <div class="ava-row" style="align-items: center; justify-content: center;">
-        <div class="ava-col" style="flex: 0 0 auto;">
+      <!-- reCAPTCHA and Submit Button -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 15px;">
+        <div>
           <div class="g-recaptcha" data-sitekey="6Ld0cZIrAAAAAPgYU8rbR2gOP6FMdB1g-9e5uH1O" data-callback="onRecaptchaValidated" data-expired-callback="onRecaptchaExpired"></div>
           <div id="recaptcha-feedback" style="display:none; color:#c0392b; margin:8px 0;">Please complete the reCAPTCHA verification.</div>
         </div>
-        <div class="ava-col" style="flex: 0 0 auto;">
-          <button type="button" class="ava-submit-btn" onclick="submitForm()">Submit</button>
+        <div>
+          <button type="button" class="ava-submit-btn" onclick="submitForm()">Get A Free Quote</button>
         </div>
       </div>
 
