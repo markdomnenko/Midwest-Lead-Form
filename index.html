@@ -43,12 +43,6 @@
       min-height: 80px; resize: vertical; font-family: inherit; font-size: 15px;
     }
     .g-recaptcha { margin: 0 auto; }
-    .ava-trust {
-      font-size: 12px;
-      color: #888;
-      margin: 0 0 14px 0;
-      letter-spacing: 0.01em;
-    }
     .ava-submit-btn {
       width: 100%; max-width: 260px; padding: 14px;
       font-size: 16px; font-weight: 600;
@@ -58,9 +52,6 @@
       transition: background-color 0.15s;
     }
     .ava-submit-btn:hover { background-color: #0057ba; }
-    .ava-powered {
-      font-size: 11px; color: #aaa; margin-top: 12px;
-    }
     .ava-hidden { position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none; }
     #recaptcha-feedback { display: none; color: #c0392b; font-size: 13px; margin: 6px 0 0; }
     @media (max-width: 600px) {
@@ -73,7 +64,7 @@
 <div style="display:flex; justify-content:center; padding:10px;">
   <div class="ava-form-wide">
 
-    <p class="ava-title">Get a Free Recycling Quote</p>
+    <p class="ava-title">Ask about our FREE pickup!</p>
     <p class="ava-subtitle">We'll respond within one business day.</p>
 
     <form id="WebToLeadForm" action="https://stsrecycling.sugarondemand.com/index.php?entryPoint=WebToLeadCapture" method="POST">
@@ -141,11 +132,7 @@
         <div id="recaptcha-feedback">Please complete the reCAPTCHA before submitting.</div>
       </div>
 
-      <p class="ava-trust">Certified Recycling &nbsp;·&nbsp; NAID Certified &nbsp;·&nbsp; Free Pickup Available &nbsp;·&nbsp; Secure Data Destruction</p>
-
       <button type="button" class="ava-submit-btn" onclick="submitForm()">Get A Free Quote</button>
-
-      <p class="ava-powered">Powered by STS Electronic Recycling</p>
 
     </form>
   </div>
